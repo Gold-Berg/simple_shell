@@ -59,14 +59,14 @@ int path_gen(char **env, char **path_arr)
 		return (-1);
 	if (paths == NULL)
 		return (-1);
-	path = _strt(paths, ":");
+	path = strtok(paths, ":");
 	for (n = 0; path; n++)
 	{
 		_strcpy(path_arr[n], path);
 		m = _strlen(path_arr[n]);
 		path_arr[n][m++] = '/';
 		path_arr[n][m] = '\0';
-		path = _strt(NULL, ":");
+		path = strtok(NULL, ":");
 	}
 	free(paths);
 	return (n);

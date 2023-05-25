@@ -23,11 +23,11 @@ void ex_string(char **env, char *string, int *command_count, char *file_name)
 		free(path);
 		return;
 	}
-	token = _strt(string, " ");
+	token = strtok(string, " ");
 	while (token != NULL)
 	{
 		args[args_count++] = token;
-		token = _strt(NULL, " ");
+		token = strtok(NULL, " ");
 	}
 	args[args_count] = NULL;
 	pids = fork();
