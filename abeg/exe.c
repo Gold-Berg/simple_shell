@@ -13,7 +13,7 @@ void ex_string(char **env, char *string, int *command_count, char *file_name)
 {
 	int i, status, args_count = 0;
 	char **args = malloc(MAX_STRING_LEN * sizeof(char *));
-	char *path, *token, *ss = NULL;
+	char *path, *token;
 	pid_t pids;
 
 	path = malloc(30 * sizeof(char));
@@ -23,11 +23,11 @@ void ex_string(char **env, char *string, int *command_count, char *file_name)
 		free(path);
 		return;
 	}
-	token = __strt(string, " ", &ss);
+	token = strtok(string, " ");
 	while (token != NULL)
 	{
 		args[args_count++] = token;
-		token = __strt(NULL, " ", &ss);
+		token = strtok(NULL, " ");
 	}
 	args[args_count] = NULL;
 	pids = fork();

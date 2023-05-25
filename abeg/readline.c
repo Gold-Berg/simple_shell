@@ -26,11 +26,11 @@ int readline(char **str, FILE *stream)
 {
 	int char_num;
 	size_t input_size;
-	char *temp_str = NULL, *token = NULL, *ss = NULL;
+	char *temp_str = NULL, *token = NULL;
 
 	char_num = getline(&temp_str, &input_size, stream);
 	if (char_num != -1)
-		token = __strt(temp_str, "\n", &ss);
+		token = strtok(temp_str, "\n");
 	if (token != NULL)
 	{
 		*str = malloc(30);

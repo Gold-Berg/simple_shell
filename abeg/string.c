@@ -61,7 +61,7 @@ int _strcat(char *string1, char *addition, char *final_string)
 
 int get_cmd(char *string, char *cmd)
 {
-	char *token = NULL, *words = NULL, *ss = NULL;
+	char *token = NULL, *words = NULL;
 
 	if (string == NULL)
 		return (-1);
@@ -69,7 +69,7 @@ int get_cmd(char *string, char *cmd)
 	if (words == NULL)
 		return (-1);
 	_strcpy(words, string);
-	token = __strt(words, " ", &ss);
+	token = strtok(words, " ");
 	if (token == NULL)
 	{
 		free(words);

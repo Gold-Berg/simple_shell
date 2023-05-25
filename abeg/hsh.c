@@ -17,7 +17,6 @@ int main(int argc __attribute__((unused)),
 		char **env)
 {
 	int command_count = 1;
-	char *ss = NULL, *token = NULL;
 
 	signal(SIGINT, handle_signal);
 	while (1)
@@ -39,33 +38,21 @@ int main(int argc __attribute__((unused)),
 			free(string);
 			return (0);
 		}
-		token = __strt(string, ";", &ss);
-		while (token != NULL)
-		{
 		cmd = malloc(30 * sizeof(char));
 		if (cmd == NULL)
-		{
-			free(string);
 			return (0);
-		}
 		unknown_cmd = malloc(20 * sizeof(char));
 		if (unknown_cmd == NULL)
-		{
-			free(cmd);
-			free(string);
 			return (0);
-		}
 		n = get_cmd(string, unknown_cmd);
 		if (n == 0)
 			m = locate_path(env, cmd, unknown_cmd, &command_count, argv[0]);
 		if (m == 0)
 			ex_string(env, string, &command_count, argv[0]);
+		free(string);
 		free(cmd);
 		free(unknown_cmd);
-		token = __strt(NULL, ";", &ss);
 		command_count++;
-		}
-		free(string);
 	}
 	return (0);
 }

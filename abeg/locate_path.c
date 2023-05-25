@@ -40,7 +40,7 @@ int str_cmp(char *str1, char *str2, size_t len)
 int path_gen(char **env, char **path_arr)
 {
 	int i, n;
-	char *paths, *path, *ss = NULL;
+	char *paths, *path;
 	size_t m;
 
 	paths = malloc(70 * sizeof(char));
@@ -59,14 +59,14 @@ int path_gen(char **env, char **path_arr)
 		return (-1);
 	if (paths == NULL)
 		return (-1);
-	path = __strt(paths, ":", &ss);
+	path = strtok(paths, ":");
 	for (n = 0; path; n++)
 	{
 		_strcpy(path_arr[n], path);
 		m = _strlen(path_arr[n]);
 		path_arr[n][m++] = '/';
 		path_arr[n][m] = '\0';
-		path = __strt(NULL, ":", &ss);
+		path = strtok(NULL, ":");
 	}
 	free(paths);
 	return (n);

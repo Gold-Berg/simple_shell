@@ -14,12 +14,12 @@ char *_strcpy(char *dest, const char *src);
 int _strcat(char *string1, char *addition, char *final_string);
 int locate_path(char **env, char *cmd_path, char *cmd, int *command_count, char *file_name);
 void ex_string(char **env, char *string, int *command_count, char *file_name);
+char *_strt(char *string, const char *deli);
 int get_cmd(char *string, char *cmd);
 void handle_signal(int signal);
 char *__strcat(char *dest, const char *src);
 void _itoa(int value, char *str);
 size_t _strlen(const char *str);
-char *__strt(char *string, const char *deli, char **save_ptr);
 
 #define MAX_PATHS 7
 #define MAX_STRING_LEN 2048
