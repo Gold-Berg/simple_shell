@@ -30,11 +30,7 @@ int readline(char **str, FILE *stream)
 
 	char_num = getline(&temp_str, &input_size, stream);
 	if (char_num != -1)
-<<<<<<< HEAD
 		token = _strt(temp_str, "\n");
-=======
-		token = strtok(temp_str, "\n");
->>>>>>> 5c87857a9b0a447d81b5375609949dd7e50db76b
 	if (token != NULL)
 	{
 		*str = malloc(30);

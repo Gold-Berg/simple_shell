@@ -1,8 +1,19 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+/**
+ * _strcmp - custom strcmp
+ * @str1: str1
+ * @str2: str2
+ * Return: zero
+ */
 int _strcmp(const char *str1, const char *str2);
-/*custom strtok function*/
+/**
+ * _strt - custom strtok
+ * @string: the string
+ * @deli: delimeter
+ * Return: NULL
+ */
 char *_strt(char *string, const char *deli)
 {
 	int i, j, found;
@@ -14,9 +25,10 @@ char *_strt(char *string, const char *deli)
 		next = string;
 	}
 
-    if (_strcmp(next, deli) == 0) {
-        return NULL;
-    }
+	if (_strcmp(next, deli) == 0)
+	{
+		return (NULL);
+	}
 	if (next == NULL || *next == '\0')
 	{
 		return (NULL);
@@ -49,26 +61,38 @@ char *_strt(char *string, const char *deli)
 	return (word);
 }
 #include <stddef.h>
-
-int _strcmp(const char *str1, const char *str2) {
+/**
+ * _strcmp - custom strcmp
+ * @str1: str1
+ * @str2: str2
+ * Return: zero
+ */
+int _strcmp(const char *str1, const char *str2)
+{
 	size_t i;
 
-    if (str1 == NULL && str2 == NULL) {
-        return 0;
-    } else if (str1 == NULL) {
-        return -1;
-    } else if (str2 == NULL) {
-        return 1;
-    }
-
-    for (i = 0; str1[i] != '\0' || str2[i] != '\0'; i++) {
-        if (str1[i] < str2[i]) {
-            return -1;
-        } else if (str1[i] > str2[i]) {
-            return 1;
-        }
-    }
-
-    return 0;
+	if (str1 == NULL && str2 == NULL)
+	{
+		return (0);
+	}
+	else if (str1 == NULL)
+	{
+		return (-1);
+	}
+	else if (str2 == NULL)
+	{
+		return (1);
+	}
+	for (i = 0; str1[i] != '\0' || str2[i] != '\0'; i++)
+	{
+		if (str1[i] < str2[i])
+		{
+			return (-1);
+		}
+		else if (str1[i] > str2[i])
+		{
+			return (1);
+		}
+	}
+	return (0);
 }
-
