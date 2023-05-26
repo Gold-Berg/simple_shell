@@ -23,7 +23,7 @@ int main(int argc __attribute__((unused)),
 	while (1)
 	{
 		char *string = NULL, *cmd = NULL, *unknown_cmd = NULL;
-		int n, m = -1;
+		int n, m = -1, keep_going = 1;
 
 		if (isatty(STDIN_FILENO))
 			print_prompt();
@@ -42,6 +42,7 @@ int main(int argc __attribute__((unused)),
 				free(string);
 				return (n);
 			}
+			keep_going = 0;
 		}
 		token = __strt(string, ";", &ss);
 		while (token != NULL)
@@ -60,7 +61,7 @@ int main(int argc __attribute__((unused)),
 			return (0);
 		}
 		n = get_cmd(string, unknown_cmd);
-		if (n == 0)
+		if (n == 0 && keep_going)
 			m = locate_path(env, cmd, unknown_cmd, &command_count, argv[0]);
 		if (m == 0)
 			ex_string(env, string, &command_count, argv[0]);

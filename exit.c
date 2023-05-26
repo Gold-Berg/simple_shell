@@ -42,6 +42,7 @@ int _exit_(char *cmd_input, char *file_name, int *arg_num)
 		__strcat(error_msg, params_arr[0]);
 		__strcat(error_msg, ": Illegal number: ");
 		__strcat(error_msg, params_arr[1]);
+		__strcat(error_msg, "\n");
 		write(STDERR_FILENO, error_msg, _strlen(error_msg));
 		/*free(params_arr);*/
 		return (-9);
