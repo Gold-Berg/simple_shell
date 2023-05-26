@@ -29,6 +29,7 @@ This will launch the shell program, allowing you to enter shell commands.
 
 Unfortunately we are not accepting contrbutors on this project as it is a course based project.
 
+
 However you can take a look at a handful of projects in our repositories, if you would like to contribute, feel free to submit a pull request. We welcome any and all contributions!
 
 
