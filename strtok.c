@@ -2,7 +2,7 @@
 char *__strt(char *string, const char *deli, char **save_ptr)
 {
 	int i , j, found;
-	char *word = NULL;
+	char *word = NULL, *end = NULL;
 
 	if (string != NULL)
 	{
@@ -43,6 +43,12 @@ char *__strt(char *string, const char *deli, char **save_ptr)
 	if (!found)
 	{
 		*save_ptr = NULL;
+	}
+	end = word + _strlen(word) - 1;
+	while (end > word && *end == ' ')
+	{
+		*end = '\0';
+		end--;
 	}
 	return (word);
 }
