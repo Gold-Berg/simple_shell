@@ -12,18 +12,18 @@
 
 int _exit_(char *cmd_input, char *file_name, int *arg_num)
 {
-	char *params_arr[5], *token;
+	char *params_arr[5], *token, *ss = NULL;
 	int i, n;
 	char error_msg[50], count_str[10];
 
 	/*params_arr = malloc(5 * sizeof(char *));*/
 	if (params_arr == NULL)
 		return (-9);
-	token = strtok(cmd_input, " ");
+	token = __strt(cmd_input, " ", &ss);
 	for (i = 0; token != NULL && i < 2; i++)
 	{
 		params_arr[i] = token;
-		token = strtok(NULL, " ");
+		token = __strt(NULL, " ", &ss);
 	}
 	params_arr[i] = NULL;
 	if (i < 2)
