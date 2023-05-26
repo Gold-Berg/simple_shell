@@ -35,6 +35,7 @@ However you can take a look at a handful of projects in our repositories, if you
 
 **Acknowledgments**
 
+
 We would like to thank alx for the opportunity to create such an educative project in the alxswe program.
 
 We hope you find this simple shell program useful and easy to use. If you have any questions or suggestions, please don't hesitate to reach out. Thanks for using our program!
