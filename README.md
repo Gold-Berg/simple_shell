@@ -7,6 +7,7 @@ This is a simple shell program that allows users to execute basic shell commands
 
 To use this shell program, simply clone this repository onto your local machine:
 
+
 	$ git clone https://github.com/your_username/simple_shell.git
 
 Then navigate to the directory where the program is located and run the following command:
