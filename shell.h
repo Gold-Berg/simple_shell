@@ -20,6 +20,8 @@ char *__strcat(char *dest, const char *src);
 void _itoa(int value, char *str);
 size_t _strlen(const char *str);
 char *__strt(char *string, const char *deli, char **save_ptr);
+int str_to_int(char *str);
+int _exit_(char *cmd_input, char *file_name, int *arg_num);
 
 #define MAX_PATHS 7
 #define MAX_STRING_LEN 2048

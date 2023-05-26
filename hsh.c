@@ -36,8 +36,12 @@ int main(int argc __attribute__((unused)),
 		}
 		if (str_cmp(string, "exit", 4) == 0)
 		{
-			free(string);
-			return (0);
+			n = _exit_(string, argv[0], &command_count);
+			if (n >= 0)
+			{
+				free(string);
+				return (n);
+			}
 		}
 		token = __strt(string, ";", &ss);
 		while (token != NULL)
