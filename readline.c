@@ -3,6 +3,7 @@
 /**
  * print_prompt - Prints a prompt
  *
+ *
  * return: void
  */
 
